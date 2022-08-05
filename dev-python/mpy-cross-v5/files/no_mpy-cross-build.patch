@@ -1,0 +1,11 @@
+--- a/setup.py	2022-08-03 17:04:42.702323802 +0200
++++ b/setup.py	2022-08-03 17:04:53.689143274 +0200
+@@ -78,7 +78,7 @@
+ 
+ setup(
+     cmdclass={
+-        "build": custom_build,
++#        "build": custom_build,
+         "install": custom_install,
+         "bdist_wheel": custom_bdist_wheel,
+     },

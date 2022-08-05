@@ -1,0 +1,11 @@
+--- a/mpy-cross/Makefile	2022-07-21 22:01:55.405776455 +0200
++++ b/mpy-cross/Makefile	2022-07-21 22:02:02.292652645 +0200
+@@ -1,7 +1,7 @@
+ include ../py/mkenv.mk
+ 
+ # define main target
+-PROG = mpy-cross
++PROG = mpy-cross-v5
+ 
+ # qstr definitions (must come before including py.mk)
+ QSTR_DEFS = qstrdefsport.h

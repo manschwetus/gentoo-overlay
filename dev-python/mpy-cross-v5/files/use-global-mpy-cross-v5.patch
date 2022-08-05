@@ -1,0 +1,11 @@
+--- a/src/mpy_cross_v5/__init__.py	2022-08-03 17:07:16.135802037 +0200
++++ b/src/mpy_cross_v5/__init__.py	2022-08-03 17:12:06.934018949 +0200
+@@ -8,7 +8,7 @@
+ 
+ 
+ MPY_CROSS_PATH = (
+-    (pathlib.Path(__file__).parent / "mpy-cross")
++    (pathlib.Path("/usr/bin") / "mpy-cross-v5")
+     .with_suffix(".exe" if platform.system() == "Windows" else "")
+     .absolute()
+ )

@@ -1,0 +1,45 @@
+From ef203292c06e55fcfd1fda0a53d8e18283715b8c Mon Sep 17 00:00:00 2001
+From: David Lechner <david@pybricks.com>
+Date: Fri, 8 Jul 2022 10:59:16 -0500
+Subject: [PATCH] connections.pybricks: fix wrong import
+
+`Optional` was imported from the wrong package. Also sort imports while
+we are touching this.
+---
+ pybricksdev/connections/pybricks.py | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+
+diff --git a/pybricksdev/connections/pybricks.py b/pybricksdev/connections/pybricks.py
+index 16e4c28..65c2513 100644
+--- a/pybricksdev/connections/pybricks.py
++++ b/pybricksdev/connections/pybricks.py
+@@ -5,15 +5,14 @@
+ import logging
+ import os
+ import struct
+-from typing import Awaitable, TypeVar
+-from pyparsing import Optional
++from typing import Awaitable, Optional, TypeVar
+ 
+ import rx.operators as op
+ import semver
+ from bleak import BleakClient
+ from bleak.backends.device import BLEDevice
+ from packaging.version import Version
+-from rx.subject import Subject, BehaviorSubject, AsyncSubject
++from rx.subject import AsyncSubject, BehaviorSubject, Subject
+ from tqdm.auto import tqdm
+ from tqdm.contrib.logging import logging_redirect_tqdm
+ 
+@@ -21,10 +20,10 @@
+ from ..ble.nus import NUS_RX_UUID, NUS_TX_UUID
+ from ..ble.pybricks import (
+     FW_REV_UUID,
++    PNP_ID_UUID,
+     PYBRICKS_CONTROL_UUID,
+     PYBRICKS_PROTOCOL_VERSION,
+     SW_REV_UUID,
+-    PNP_ID_UUID,
+     Event,
+     StatusFlag,
+     unpack_pnp_id,
